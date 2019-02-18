@@ -1,0 +1,310 @@
+\documentclass{elegantbook}
+
+%%=====编译方式pdflatex============================
+%%=====否则公式中数学字体不为times====================
+
+%%=====新数学命令================================
+\newcommand\dif{\mathrm{d}}
+\newcommand\no{\noindent}
+\newcommand\dis{\displaystyle}
+\newcommand\ls{\leqslant}
+\newcommand\gs{\geqslant}
+
+\newcommand\limit{\dis\lim\limits}
+\newcommand\limn{\dis\lim\limits_{n\to\infty}}
+\newcommand\limxz{\dis\lim\limits_{x\to0}}
+\newcommand\limxi{\dis\lim\limits_{x\to\infty}}
+\newcommand\limxpi{\dis\lim\limits_{x\to+\infty}}
+\newcommand\limxni{\dis\lim\limits_{x\to-\infty}}
+
+\newcommand\sumn{\dis\sum\limits_{n=1}^{\infty}}
+\newcommand\sumnz{\dis\sum\limits_{n=0}^{\infty}}
+
+\newcommand\sumi{\dis\sum\limits_{i=1}^{\infty}}
+\newcommand\sumin{\dis\sum\limits_{i=1}^{n}}
+\newcommand\sumizn{\dis\sum\limits_{i=0}^{n}}
+
+\newcommand\sumk{\dis\sum\limits_{k=1}^{\infty}}
+\newcommand\sumkz{\dis\sum\limits_{k=0}^{\infty}}
+\newcommand\sumkn{\dis\sum\limits_{k=0}^n}
+\newcommand\sumkfn{\dis\sum\limits_{k=1}^n}
+
+\newcommand\pzx{\dis\frac{\partial z}{\partial x}}
+\newcommand\pzy{\dis\frac{\partial z}{\partial y}}
+
+\newcommand\pfx{\dis\frac{\partial f}{\partial x}}
+\newcommand\pfy{\dis\frac{\partial f}{\partial x}}
+
+\newcommand\pzxx{\dis\frac{\partial^2 z}{\partial x^2}}
+\newcommand\pzxy{\dis\frac{\partial^2 z}{\partial x\partial y}}
+\newcommand\pzyx{\dis\frac{\partial^2 z}{\partial y\partial x}}
+\newcommand\pzyy{\dis\frac{\partial^2 z}{\partial y^2}}
+
+\newcommand\pfxx{\dis\frac{\partial^2 f}{\partial x^2}}
+\newcommand\pfxy{\dis\frac{\partial^2 f}{\partial x\partial y}}
+\newcommand\pfyx{\dis\frac{\partial^2 f}{\partial y\partial x}}
+\newcommand\pfyy{\dis\frac{\partial^2 f}{\partial y^2}}
+
+\newcommand\intzi{\dis\int_{0}^{+\infty}}
+\newcommand\intd{\dis\int}
+\newcommand\intab{\dis\int_a^b}
+\newcommand\ma{\mathcal{A}}
+\newcommand\mr{\mathcal{R}}
+%%==============================================
+
+%%=====定义新数学符号=====================
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\grad}{\bf{grad}}
+%====================================
+
+\author{杨敬轩}
+\date{\today}
+\email{JingXuanHuan.Yang@gmail.com}
+\usepackage{ntheorem}
+\zhtitle{概率论}
+%\zhend{模板}
+\entitle{Probability}
+%\enend{Template}
+\version{\LaTeX\ v1.0}
+\myquote{Victory won\rq t come to us unless we go to it.}
+\logo{logop.jpg}
+\cover{cover.pdf}
+
+%green color
+   \definecolor{main1}{RGB}{0,120,2}
+   \definecolor{second1}{RGB}{230,90,7}
+   \definecolor{third1}{RGB}{0,160,152}
+%cyan color
+   \definecolor{main2}{RGB}{0,175,152}
+   \definecolor{second2}{RGB}{239,126,30}
+   \definecolor{third2}{RGB}{120,8,13}
+%blue color
+   \definecolor{main3}{RGB}{20,50,104}
+   \definecolor{second3}{RGB}{180,50,131}
+   \definecolor{third3}{RGB}{7,127,128}
+
+\usepackage{makecell}
+\usepackage{lipsum}
+\usepackage{texnames}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\mainmatter
+\chapter{Axioms of Probability}
+
+\begin{definition}{Sample Space}{Sample}
+The sample space $\Omega$ of an experiment is the set of all possible outcomes of the experiment.
+\end{definition}
+
+\begin{definition}{Event}{Event}
+An event of an experiment is a subset of the sample space $\Omega$ of the experiment. 
+We call $\Omega$ the certain event and $\Phi$ the impossible event of the experiment. 
+We say that an event $A$ occurs if the outcome of the experiment belongs to $A$.
+
+\end{definition}
+
+\begin{definition}{$\sigma$-algebra}{algebra}
+A $\sigma$-algebra $\ma$ of subsets of a sample space $\Omega$ is a collection of subset of $\Omega$ s.t.\\
+(1) $\Omega\in\ma$,\\
+(2) $\ma$  is closed under complementation, i.e., if $A\in\ma$ , then $\Omega\backslash A\in\ma$,\\
+(3) $\ma$  is closed under countable union, i.e., if $A_n\in\ma$ for $n=1,2,\cdots$, then $$\bigcap_{n=1}^\infty A_n \in\ma.$$
+
+\end{definition}
+
+\begin{theorem}{Properties of $\sigma$-algebra}{Properties}
+Suppose $A$ is a $\sigma$-algebra of subsets of a sample space $\Omega$.
+\\
+(1) $\Phi\in\ma,$\\
+(2) $A$ is closed under finite union,\\
+(3) $A$ is closed under countable and finite intersection.
+
+\end{theorem}
+
+\begin{theorem}{Intersection of $\sigma$-algebra}{Intersection}
+Suppose $\Gamma$ is a nonempty collection of $\sigma$-algebra of subsets of a sample space $\Omega$. Then the intersection $$B=\bigcap_{A\in\Gamma}A$$ of the $\sigma$-algebra in $\Gamma$ is also a $\sigma$-algebra of subsets of $\Omega$.
+
+\end{theorem}
+
+\begin{corollary}{Existence of Smallest $\sigma$-algebra}{Existence}
+Suppose $\mathcal{C}$ is a collection of subsets of a sample space $\Omega$. Then there exists a smallest $\sigma$-algebra of subsets of $\Omega$ including $\mathcal{C}$.
+
+\end{corollary}
+
+\begin{definition}{Generated $\sigma$-algebra}{Generated}
+Let $\mathcal{C}$ be a collection of subsets of a sample space $\Omega$, we define the $\sigma$-algebra of subsets of $\Omega$ generated by $\mathcal{C}$ as the smallest $\sigma$-algebra of subsets of $\Omega$ including $\mathcal{C}$ and denoted it as $\sigma$($\mathcal{C}$).
+
+\end{definition}
+
+\begin{definition}{Probability Measure}{Probability Measure}
+Let $A$ be a $\sigma$-algebra of subsets of a sample space $\Omega$, a probability measure $P: \ma\rightarrow\mr$ on $A$ is a real-valued function on $A$ s.t.\\
+(1) Nonnegativity: $P(A)\gs0,\ \forall A\in\ma,$ \\
+(2) Normalization: $P(\Omega)=1$, \\
+(3) Countable additivity: If $A_1,A_2, \cdots$ are pairwise disjoint events in 
+$A$ then $$P\left(\bigcup_{n=1}^\infty A_n \right)=\sumn P(A) .$$
+For an event $A\in\ma$ , we call $P(A)$ the probability of the event $A$.
+
+\end{definition}
+
+\begin{definition}{Probability Space}{Probability Space}
+A probability space is an ordered triple $(\Omega,\ma, P)$ consisting of a sample space $\Omega$ , a $\sigma$-algebra $\ma$  of subsets of $\Omega$, and a probability measure $P$ on $\ma$ .
+
+\end{definition}
+
+\begin{theorem}{A Kind of Probability Measure }{A Kind}
+Suppose $\Omega={w_1,w_2,\cdots}$, $\ma\in\mathcal{P}(\Omega)$ and $$P(A)=\sum\limits_{w_i\in\ma}P_i,\  \text{for all}\ A\in\mathcal{P}(\Omega),$$
+where $P_i\gs0,\ \forall i=1,2,\cdots$ and $$\sumi P_i =1,$$ then $P$ is a probability measure on $\mathcal{P}(\Omega)$. A similar result holds if $\Omega={w_1,w_2,\cdots,w_N}$, where $N\gs1$.
+
+\end{theorem}
+
+\begin{corollary}{A Kind of Probability Measure (special)}{special}
+Suppose $\Omega={w_1,w_2,\cdots,w_N}$, $\ma\in\mathcal{P}(\Omega)$, and $$P(A)=\frac{|A|}{N}$$ for all $A\in\mathcal{P}(\Omega)$, then $P$ is a probability measure on $\mathcal{P}(\Omega)$.
+
+\end{corollary}
+
+\begin{theorem}{Classical definition of probability}{Classical}
+Suppose $\Omega={w_1,w_2,\cdots,w_N}$, $\ma\in\mathcal{P}(\Omega)$ and $P$ is a probability measure on $\mathcal{P}(\Omega)$  such that $P({w_1})= P({w_2})=\cdots= P({w_N})$, then $$P(A)=\frac{|A|}{N}$$ for all $A\in\mathcal{P}(\Omega)$.
+
+\end{theorem}
+
+\begin{theorem}{Properties of Probability Measure}{Properties}
+Suppose $(\Omega,\ma, P)$ is a probability space.\\
+(1) $P(\Phi)=0,$\\
+(2) $P(A)+P(A^c)=1$. Therefore, $0\ls P(A)\ls1$, for all $A\in\ma$.\\
+(3) Finite additivity: If $A_1,A_2,\cdots,A_N$ are pairwise disjoint events in $A$,              then $$P\left(\bigcup_{n=1}^NA_n \right)=\sum_{n=1}^NP(A). $$
+
+\end{theorem}
+
+\begin{theorem}{Properties of Probability Measure}{Properties of P}
+Suppose $(\Omega,\ma, P)$ is a probability space, and suppose $A,B\in\ma$.
+\\
+(1) If $A_1,A_2,\cdots$ are pairwise disjoint events on $A$ and 
+$$ \bigcup_{n=1}^\infty A_n =\Omega,$$ then 
+$$P(A)= \sumi P(A \cap A_n ).$$
+(2) If $B\subseteq A$, then $P(A)=P(A\cap B)+P(A\cap A^c )$ for all $A,B\in\ma$.\\
+(3) $P(A\cap B)  \ls \min \{P(A),P(B)\}  \ls \max\{ P(A),P(B)\} \ls  P(A\cup B)$.
+
+\end{theorem}
+
+\begin{corollary}{Finite Additivity under Union}{Finite Additivity}
+Suppose $(\Omega,\ma, P)$ is a probability space, $A\in\ma$ , $A_1,A_2,\cdots$ are pairwise disjoint events in $\ma$, and $$P\left(\bigcup_{n=1}^\infty A_n \right)=1,$$ then 
+$$P(A)=\sum_{n=1}^\infty P\left(A\cap A_n \right).$$ 
+
+\end{corollary}
+
+\begin{theorem}{Inclusion-exclusion identity}{Inclusion-exclusion identity}
+Suppose $(\Omega,\ma, P)$ is a probability space, and suppose $A_1,A_2,\cdots,A_n\in\ma $, where $n \gs2$, then $$P\left(\bigcup_{i=1}^n A_i \right)=\sumkfn(-1)^{k+1}\cdot  \sum_{1\ls i_1<i_2<\cdots<i_k\ls n}P\left(A_{i_1} \bigcap A_{i_2 } \bigcap\cdots\bigcap A_{i_k } \right) .$$
+
+\end{theorem}
+
+\begin{lemma}{Generated Pairwise Disjoint}{Generated Pairwise Disjoint}
+Suppose $A$ is a $\sigma$-algebra of subsets of a sample space $\Omega$, suppose $A_1,A_2,\cdots\in\ma$, $B_1=A_1$, and $$B_n=A_n\setminus\bigcup_{i=1}^{n-1}A_i$$  for all $n\gs2$, then $B_1,B_2,\cdots$ are pairwise disjoint events in $\ma$, $$\bigcup_{i=1}^nA_i =\bigcup_{i=1}^nB_i$$  for all $n\gs1$, and $$\bigcup_{n=1}^\infty A_n =\bigcup_{n=1}^\infty B_n.$$
+
+\end{lemma}
+
+\begin{theorem}{Inclusion-exclusion inequality}{Inclusion-exclusion inequality}
+Suppose $(\Omega,\ma, P)$ is a probability space, and suppose $A_1,A_2,\cdots,A_n\in\ma$, where $n\gs2$, then
+$$P\left(\bigcup_{i=1}^n A_i \right)
+\begin{cases}
+\ls\sum\limits_{k=1}^m(-1)^{k+1}\cdot  \sum\limits_{1\ls i_1<i_2<\cdots<i_k\ls n}P\left(A_{i_1} \bigcap A_{i_2 } \bigcap\cdots\bigcap A_{i_k } \right),& \text{if $m$ is odd,}\\
+\gs\sum\limits_{k=1}^m(-1)^{k+1}\cdot  \sum\limits_{1\ls i_1<i_2<\cdots<i_k\ls n}P\left(A_{i_1} \bigcap A_{i_2 } \bigcap\cdots\bigcap A_{i_k } \right),& \text{if $m$ is even,}
+\end{cases}
+$$
+where $1\ls m\ls n$.\\
+In particular,
+$$P\left(\bigcup_{i=1}^n A_i \right)\ls\sumin P(A_i),$$
+$$P\left(\bigcup_{i=1}^n A_i \right)\gs\sumin P(A_i)-
+\sum\limits_{1\ls i<j\ls n}P\left(A_i\bigcap A_j\right).$$
+\end{theorem}
+
+\begin{theorem}{Boole's inequality}{Boole's inequality}
+Suppose $(\Omega,\ma, P)$ is a probability space, and suppose $A_1,A_2,\cdots\in\ma$ , then 
+$$P\left(\bigcup_{i=1}^\infty A_i \right)\ls\sum_{i=1}^\infty P(A_i ) .$$
+
+\end{theorem}
+
+\begin{definition}{Monotonicity}{Monotonicity}
+Let $(\Omega,\ma, P)$ be a probability space.\\
+A sequence $\{A_1,A_2,\cdots\}$ of events in $A$ is increasing if $A_1\subseteq A_2\subseteq\cdots$\\
+A sequence $\{A_1,A_2,\cdots\}$ of events in $A$ is decreasing if $A_1\supseteq A_2\supseteq\cdots$
+
+\end{definition}
+
+\begin{definition}{Limit of Events}{Limit of Events}
+Let $(\Omega,\ma, P)$ be a probability space.\\
+(1) The limit $\limn A_n$ of an increasing sequence $\{A_1,A_2,\cdots\}$ of events in $A$ is the event that at least one of the events occurs, i.e., $$\limn A_n=\bigcup_{n=1}^\infty A_n.$$
+(2) The limit $\limn A_n$ of a decreasing sequence $\{A_1,A_2,\cdots\}$ of events in $A$ is the event that all the events occur, i.e., $$\limn A_n=\bigcap_{n=1}^\infty A_n.$$
+
+\end{definition}
+
+\begin{theorem}{Continuity of probability measure}{Continuity}
+Let $(\Omega,\ma, P)$ be a probability space.\\
+(1) Suppose that $\{A_1,A_2,\cdots\}$ is an increasing sequence of events in $A$. Then $$P\left(\limn A_n\right)=\limn P(A_n).$$
+(2) Suppose that $\{A_1,A_2,\cdots\}$ is a decreasing sequence of events in $A$. Then $$P\left(\limn A_n\right)=\limn P(A_n).$$
+\end{theorem}
+
+\begin{remark}
+If $P(A)=0$, then it is not necessary that $A=\Phi$, e.g., $\Omega=(0,1)$ and $A=A_\alpha,\ \alpha\in(0,1)$.
+If $P(A)=1$, then it is not necessary that $A=\Omega$, e.g., $\Omega=(0,1)$ and $A=A_\alpha^c,\ \alpha\in(0,1)$.
+
+\end{remark}
+
+\begin{definition}{Length}{Length}
+The length of the intervals $(a,b),\ [a,b),\ (a,b],\ [a,b]$ are defined to be $(b-a)$.
+\end{definition}
+
+\begin{definition}{Random}{Random}
+A point is said to be randomly selected from an interval $(a,b)$ if any subintervals of $(a,b)$ with the same length are equally likely to contain the randomly selected point.
+\end{definition}
+
+\begin{theorem}{Probability of Randomness}{Probability of Randomness}
+The probability that a randomly selected point from $(a,b)$ falls in the subinterval $(\alpha,\beta)$ of $(a,b)$ is $$\frac{\beta-\alpha}{b-a}.$$
+
+\end{theorem}
+
+\begin{definition}{Borel Algebra}{Borel Algebra}
+The $\sigma$-algebra of subsets of $(a,b)$ generated by the set of all subintervals of $(a,b)$ is called Borel algebra associated with $(a,b)$ and is denoted $\mathcal{B}_{(a,b)}$.
+\end{definition}
+
+\begin{theorem}{Existence of Probability Measure}{Existence}
+For any interval $(a,b)$, there exists a unique probability measure $P$ on $\mathcal{B}_{(a,b)}$ s.t., $$P\left[(\alpha,\beta)\right]=\frac{\beta-\alpha}{b-a},$$
+for all $(\alpha,\beta)\subseteq(a,b)$.
+\end{theorem}
+
+
+
+%%=====模板========================================
+%%================================================
+
+\chapter{Templates}
+\begin{definition}{}{}
+
+\end{definition}
+
+\begin{theorem}{}{}
+
+\end{theorem}
+
+\begin{corollary}{}{}
+
+\end{corollary}
+
+\begin{lemma}{}{}
+
+\end{lemma}
+
+\begin{proof}
+
+\end{proof}
+
+\begin{remark}
+
+\end{remark}
+
+
+\end{document}
