@@ -1,0 +1,97 @@
+% settings.tex
+% 储存配置信息
+
+\usepackage{setspace}
+\usepackage{bm}
+\usepackage{makecell}
+\usepackage{lipsum}
+\usepackage{texnames}
+\usepackage{ntheorem}
+
+%green color
+   \definecolor{main1}{RGB}{0,120,2}
+   \definecolor{second1}{RGB}{230,90,7}
+   \definecolor{third1}{RGB}{0,160,152}
+%cyan color
+   \definecolor{main2}{RGB}{0,175,152}
+   \definecolor{second2}{RGB}{239,126,30}
+   \definecolor{third2}{RGB}{120,8,13}
+%blue color
+   \definecolor{main3}{RGB}{20,50,104}
+   \definecolor{second3}{RGB}{180,50,131}
+   \definecolor{third3}{RGB}{7,127,128}
+
+%%=====新数学命令================================
+\newcommand\dif{\mathrm{d}}
+\newcommand\no{\noindent}
+\newcommand\dis{\displaystyle}
+\newcommand\ls{\leqslant}
+\newcommand\gs{\geqslant}
+
+\newcommand\limit{\dis\lim\limits}
+\newcommand\limn{\dis\lim\limits_{n\to\infty}}
+\newcommand\limxz{\dis\lim\limits_{x\to0}}
+\newcommand\limxi{\dis\lim\limits_{x\to\infty}}
+\newcommand\limxpi{\dis\lim\limits_{x\to+\infty}}
+\newcommand\limxni{\dis\lim\limits_{x\to-\infty}}
+\newcommand\limtpi{\dis\lim\limits_{t\to+\infty}}
+\newcommand\limtni{\dis\lim\limits_{t\to-\infty}}
+
+\newcommand\sumn{\dis\sum\limits_{n=1}^{\infty}}
+\newcommand\sumnz{\dis\sum\limits_{n=0}^{\infty}}
+
+\newcommand\sumi{\dis\sum\limits_{i=1}^{\infty}}
+\newcommand\sumiz{\dis\sum\limits_{i=0}^{\infty}}
+\newcommand\sumin{\dis\sum\limits_{i=1}^{n}}
+\newcommand\sumizn{\dis\sum\limits_{i=0}^{n}}
+
+\newcommand\sumk{\dis\sum\limits_{k=1}^{\infty}}
+\newcommand\sumkz{\dis\sum\limits_{k=0}^{\infty}}
+\newcommand\sumkn{\dis\sum\limits_{k=0}^n}
+\newcommand\sumkfn{\dis\sum\limits_{k=1}^n}
+
+\newcommand\pzx{\dis\frac{\partial z}{\partial x}}
+\newcommand\pzy{\dis\frac{\partial z}{\partial y}}
+
+\newcommand\pfx{\dis\frac{\partial f}{\partial x}}
+\newcommand\pfy{\dis\frac{\partial f}{\partial x}}
+
+\newcommand\pzxx{\dis\frac{\partial^2 z}{\partial x^2}}
+\newcommand\pzxy{\dis\frac{\partial^2 z}{\partial x\partial y}}
+\newcommand\pzyx{\dis\frac{\partial^2 z}{\partial y\partial x}}
+\newcommand\pzyy{\dis\frac{\partial^2 z}{\partial y^2}}
+
+\newcommand\pfxx{\dis\frac{\partial^2 f}{\partial x^2}}
+\newcommand\pfxy{\dis\frac{\partial^2 f}{\partial x\partial y}}
+\newcommand\pfyx{\dis\frac{\partial^2 f}{\partial y\partial x}}
+\newcommand\pfyy{\dis\frac{\partial^2 f}{\partial y^2}}
+
+\newcommand\intzi{\dis\int_{0}^{+\infty}}
+\newcommand\intd{\dis\int}
+\newcommand\intab{\dis\int_a^b}
+
+\newcommand\ma{\mathcal{A}}
+\newcommand\mb{\mathcal{B}}
+\newcommand\mc{\mathcal{C}}
+\newcommand\me{\mathcal{E}}
+\newcommand\mg{\mathcal{g}}
+
+\newcommand\mr{\mathbb{R}}
+\newcommand\mz{\mathbb{Z}}
+
+\newcommand\mx{\mathbf{x}}
+\newcommand\mX{\mathbf{X}}
+\newcommand\my{\mathbf{y}}
+\newcommand\mY{\mathbf{Y}}
+%%==============================================
+
+%%=====定义新数学符号=====================
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\arccot}{arccot}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\arccoth}{arccoth}
+\DeclareMathOperator{\grad}{\bf{grad}}
+\DeclareMathOperator{\argmax}{argmax}
+%====================================

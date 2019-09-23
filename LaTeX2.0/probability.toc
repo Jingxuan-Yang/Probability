@@ -1,0 +1,41 @@
+\contentsline {chapter}{\numberline {1}Axioms of Probability}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Combinational Methods}{11}{chapter.2}
+\contentsline {chapter}{\numberline {3}Conditional Probability and Independence}{14}{chapter.3}
+\contentsline {chapter}{\numberline {4}Distribution Functions and Discrete Random Variables}{22}{chapter.4}
+\contentsline {section}{\numberline {4.1}Random Variables}{22}{section.4.1}
+\contentsline {section}{\numberline {4.2}Distribution Functions}{28}{section.4.2}
+\contentsline {section}{\numberline {4.3}Discrete Random Variables}{30}{section.4.3}
+\contentsline {section}{\numberline {4.4}Expectations of Discrete Random Variables}{32}{section.4.4}
+\contentsline {section}{\numberline {4.5}Variances and Moments of Discrete Random Variables}{34}{section.4.5}
+\contentsline {section}{\numberline {4.6}Standardized Random Variables}{36}{section.4.6}
+\contentsline {chapter}{\numberline {5}Special Discrete Distributions}{38}{chapter.5}
+\contentsline {section}{\numberline {5.1}Bernoulli R.V.'s and Binomial R.V.'s}{38}{section.5.1}
+\contentsline {section}{\numberline {5.2}Poisson R.V.'s}{40}{section.5.2}
+\contentsline {section}{\numberline {5.3}Geometric R.V.'s, Negative Binomial R.V.'s and Hypergeometric R.V.'s}{42}{section.5.3}
+\contentsline {chapter}{\numberline {6}Continuous Random Variables}{49}{chapter.6}
+\contentsline {section}{\numberline {6.1}Probability Density Function}{49}{section.6.1}
+\contentsline {section}{\numberline {6.2}The Probability Density Function of A Function of A R.V.}{51}{section.6.2}
+\contentsline {section}{\numberline {6.3}Expectations and Variances}{52}{section.6.3}
+\contentsline {chapter}{\numberline {7}Special Continuous Distributions}{58}{chapter.7}
+\contentsline {section}{\numberline {7.1}Uniform R.V.'s}{58}{section.7.1}
+\contentsline {section}{\numberline {7.2}Normal (Gaussian) R.V.'s}{59}{section.7.2}
+\contentsline {section}{\numberline {7.3}Gamma R.V.'s, Erlang R.V.'s and Exponential R.V.'s}{63}{section.7.3}
+\contentsline {section}{\numberline {7.4}Beta R.V.'s}{72}{section.7.4}
+\contentsline {chapter}{\numberline {8}Bivariate and Multivariate Distributions}{75}{chapter.8}
+\contentsline {section}{\numberline {8.1}Joint Distributions of Two or More R.V.'s}{75}{section.8.1}
+\contentsline {section}{\numberline {8.2}Independent R.V.'s}{81}{section.8.2}
+\contentsline {section}{\numberline {8.3}Conditional Distributions}{83}{section.8.3}
+\contentsline {section}{\numberline {8.4}Transformations of Two R.V.'s}{89}{section.8.4}
+\contentsline {section}{\numberline {8.5}Order Statistics}{91}{section.8.5}
+\contentsline {section}{\numberline {8.6}Multinomial Distributions}{94}{section.8.6}
+\contentsline {chapter}{\numberline {9}More Expectations and Variance}{96}{chapter.9}
+\contentsline {section}{\numberline {9.1}Expected Values of Sums of R.V.'s}{96}{section.9.1}
+\contentsline {section}{\numberline {9.2}Covariance and Correlation Coef\/f\/icients}{97}{section.9.2}
+\contentsline {section}{\numberline {9.3}Conditioning on R.V.'s}{101}{section.9.3}
+\contentsline {section}{\numberline {9.4}Bivariate Normal (Gaussian) Distribution}{104}{section.9.4}
+\contentsline {chapter}{\numberline {10}Sums of Independent R.V.'s and Limit Theorems}{108}{chapter.10}
+\contentsline {section}{\numberline {10.1}Moment Generating Functions}{108}{section.10.1}
+\contentsline {section}{\numberline {10.2}Sums of Independent R.V.'s}{109}{section.10.2}
+\contentsline {section}{\numberline {10.3}Markov and Chebyshev Inequalities}{110}{section.10.3}
+\contentsline {section}{\numberline {10.4}Laws of Large Numbers (LLN's)}{113}{section.10.4}
+\contentsline {section}{\numberline {10.5}Central Limit Theorem (CLT)}{115}{section.10.5}
